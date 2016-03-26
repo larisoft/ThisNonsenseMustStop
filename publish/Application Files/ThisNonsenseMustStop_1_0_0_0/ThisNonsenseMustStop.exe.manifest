@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="ThisNonsenseMustStop.exe" version="1.0.0.0" publicKeyToken="12a698f87f5c3b47" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="untitled_1_C4lHQW_256px.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="ThisNonsenseMustStop" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="ThisNonsenseMustStop.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ThisNonsenseMustStop.exe" size="182784">
+      <assemblyIdentity name="ThisNonsenseMustStop" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>PWDoNFEDp3oMJpWgLginZFj+oq0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="ThisNonsenseMustStop.exe.config" size="140">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>+pjMBs5NArDJ3ayJ28o3xy6kRsc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="untitled_1_C4lHQW_256px.ico" size="34418">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>NtsPOCmV8jJl5VHTFJyUkLAlbzI=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=larisoft\Larry" issuerKeyHash="aa57c7b149eae722cc0cf0b31ec43e9b2cd0bb65" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>5SzxmLfwQses9cbsU1+QBh5Z2WI=</DigestValue></Reference></SignedInfo><SignatureValue>spvsmOMLGvMZUnRz2+8OS0lvwKY2IBm1NKzawO0lUsevsmbah0i5BMdMH3QAyCrFvqK7K1g0OGmEHZFX//jbAgu9ncLkkxFzjU4Y5L+WxcpD++pZdrbu5upFHthaghqN19seyQED4QubYIJ+ib1BnI/sEy8u1o0YBeJSk9NvEX0=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>2AyJcOA52LDMiOQrudm3v2yivmiEmMlLKFQGELi+JW+3CrNoTxJSYwG1ykUWjIQ/TmCqS5ucQ3OsYnCxZiFlT0FChDOBsQ7efWZlP/KWY9/vDTKirM+I8mE7ar1LVxCUUiWTV3Q95uTI7/ZIMMn0K7xoUReqK9Z5lxVauykxjts=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="62d9591e06905f53ecc6f5acc742f0b798f12ce5" Description="" Url=""><as:assemblyIdentity name="ThisNonsenseMustStop.exe" version="1.0.0.0" publicKeyToken="12a698f87f5c3b47" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=larisoft\Larry</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>Nz8DxbixoIhTa8nI80MqhN4kEao=</DigestValue></Reference></SignedInfo><SignatureValue>ICrugMm6VK+rA2BqQBi0wrhEWeLxzNUq/dSOutpmHC5jTd+xS6G7wYoUKeIX/KislBC+8gIjX1Z1otPy1BcE3dwQp7hmQHHkdQ5uUTwQBrpkHH4cAYucBCLPQgw5vdznYL787Hgsxt7lg94wBC/hNXTeyh9R/Lr9ZIWbgo3VXCA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>2AyJcOA52LDMiOQrudm3v2yivmiEmMlLKFQGELi+JW+3CrNoTxJSYwG1ykUWjIQ/TmCqS5ucQ3OsYnCxZiFlT0FChDOBsQ7efWZlP/KWY9/vDTKirM+I8mE7ar1LVxCUUiWTV3Q95uTI7/ZIMMn0K7xoUReqK9Z5lxVauykxjts=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQH9YdWLrMV5ZK1f1hlfkH0zANBgkqhkiG9w0BAQUFADAnMSUwIwYDVQQDHhwAbABhAHIAaQBzAG8AZgB0AFwATABhAHIAcgB5MB4XDTE2MDMyNjA0MjY1MVoXDTE3MDMyNjEwMjY1MVowJzElMCMGA1UEAx4cAGwAYQByAGkAcwBvAGYAdABcAEwAYQByAHIAeTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA2AyJcOA52LDMiOQrudm3v2yivmiEmMlLKFQGELi+JW+3CrNoTxJSYwG1ykUWjIQ/TmCqS5ucQ3OsYnCxZiFlT0FChDOBsQ7efWZlP/KWY9/vDTKirM+I8mE7ar1LVxCUUiWTV3Q95uTI7/ZIMMn0K7xoUReqK9Z5lxVauykxjtsCAwEAATANBgkqhkiG9w0BAQUFAAOBgQBxKUDTViuY2CdgE7dUdR6LVFdENXGToiOmzX7Vz3RJYlxGGp8W37vlzBtC2J+Jq84vSSDNrVHHIyoPjfpIU2YFUUAevcumuQ08e3zMyDcBqBIhA8Oj3PJQDYNL7iW/v51VmoeISuu6gPSMmwBacFc1hQOUe7JJtCuJl/kWG7deVA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
