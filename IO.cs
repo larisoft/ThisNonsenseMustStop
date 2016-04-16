@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text; 
+using System.Text;
+using System.Windows.Forms; 
 
 namespace ThisNonsenseMustStop
 {   
@@ -55,23 +56,29 @@ namespace ThisNonsenseMustStop
         }
 
 
-        public object retrieveObject(String location){
-
+        public object retrieveObject(String location){ 
             object obje = null;
-             try
+            try
             {
                 BinaryFormatter serializer = new BinaryFormatter();
                 FileStream stream = File.Open(location, FileMode.Open);
 
                 obje = serializer.Deserialize(stream);
 
-                stream.Close();  
+                stream.Close();
             }
             catch (IOException es)
             {
+                return null;
+            }
+            catch (SerializationException e)
+            {
+                return null;
+            }
+            catch (Exception es)
+            {
 
             }
-
             return obje;
 
         }

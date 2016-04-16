@@ -41,6 +41,8 @@ namespace ThisNonsenseMustStop
 
         public Boolean isExcluded(String Name)
         {
+            if (Name!=null && Name.Equals("explorer")) return true;
+
             return excludedNames.Contains(Name);
         }
 

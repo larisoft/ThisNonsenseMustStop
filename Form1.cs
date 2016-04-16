@@ -15,14 +15,19 @@ namespace ThisNonsenseMustStop
     {
         
         Monitor monitor;
+
+        HashSet<String> already_reported = new HashSet<String>();
+        HashSet<String> allowed = new HashSet<String>(); 
+        //closes this windows after 15 seconds of inactivity. 
+
         public Form1()
         {
             InitializeComponent();
             load();
             startMonitoring();
-        }
 
-        HashSet<String> already_reported = new HashSet<string>();
+            
+        }
 
         public void startMonitoring()
         {
@@ -37,35 +42,53 @@ namespace ThisNonsenseMustStop
             bg.RunWorkerAsync();
         }
 
+        public void setReported(HashSet<String> rep)
+        {
+            this.already_reported = rep;
+        }
+
+        public void setAllowed(HashSet<String> allo)
+        {
+            this.allowed = allo;
+        }
+
+        
+
 
         public void load()
         {
-            this.FormClosing+= (object sender, FormClosingEventArgs es) => {
+
+            //instances of this class are not saved here because they are singletons.
+            FactoryBuilder build = new FactoryBuilder();
+            build.getExclude();
+            build.getSettings();
+
+
+            //add startup shortcut 
+            String exePath = Assembly.GetEntryAssembly().Location;
+            String title = "This Nonsense Must Stop";
+            String description = "Launch this Nonsense Must Stop";
+            String linkLocation = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
+            new ShortCutMaker().add_desktop_shortcut(linkLocation, exePath, title, description);
+
+            //prevent this app from getting closed by itself
+            Exclude.getInstance().addPid(Convert.ToUInt32(Process.GetCurrentProcess().Id));
+            this.Text = "This Nonsense Must Stop!";
+
+
+            this.FormClosing += (object sender, FormClosingEventArgs es) =>
+            {
                 clean_up();
             };
 
-            this.Text = "This Nonsense Must Stop!";
-
-            //generate settings and exclude classes which are necessary for everything here;
-            //instances of this class are not saved here because they are singletons.
-             FactoryBuilder build = new FactoryBuilder(); 
-                build.getExclude();
-                build.getSettings(); 
-            
-
-            //add desktop shortcut
-             
-                
-               String exePath  = Assembly.GetEntryAssembly().Location;
-               String title = "This Nonsense Must Stop";
-               String description = "Launch this Nonsense Must Stop";
-               String linkLocation = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
-               new ShortCutMaker().add_desktop_shortcut(linkLocation, exePath, title,description);
-               
-            //prevent this app from getting closed by itself
-            Exclude.getInstance().addPid(Convert.ToUInt32(Process.GetCurrentProcess().Id));
-
-
+            if (Settings.getInstance().AppRunning)
+            {
+                control_switch.Image = Properties.Resources.on_switch;
+            }
+            else
+            {
+                control_switch.Image = Properties.Resources.off;
+            }
         }
 
         private void clean_up()
@@ -99,15 +122,21 @@ namespace ThisNonsenseMustStop
         }
 
         public void processSkipped( String Name, uint pid)
-        {
+        {   
+            //we let explorer through for the simple reason that closing it
+            //affects system core functions 
+            if (Name.Equals("explorer")) return;
 
             if (Name == null || Name.Trim().Length < 1) Name = "Unknown Process";
+            if (allowed.Contains(Name)) return;
+
             reportBox.Invoke((MethodInvoker)delegate
             {
                 try
                 {
                     reportBox.AppendText("\n " + Name + " allowed to consume data");
                     Settings.getInstance().addName(Name);
+                    allowed.Add(Name);
                 }
                 catch (NullReferenceException es)
                 {
@@ -124,16 +153,18 @@ namespace ThisNonsenseMustStop
         }
 
         private void control_switch_Click(object sender, EventArgs e)
-        {
+        { 
             if (Settings.getInstance().AppRunning)
             {
                 Settings.getInstance().AppRunning = false;
                 control_switch.Image = Properties.Resources.off;
+               
             }
             else
             { 
                 Settings.getInstance().AppRunning = true;
                 control_switch.Image = Properties.Resources.on_switch;
+               
 
             }
         }
@@ -163,6 +194,8 @@ namespace ThisNonsenseMustStop
             form.Show();
             form.Focus();
         }
+
+         
          
 
     }

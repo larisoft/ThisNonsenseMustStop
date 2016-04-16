@@ -142,7 +142,6 @@
             this.Controls.Add(this.control_switch);
             this.Controls.Add(this.stat);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "This Nonsense Must Stop";
             ((System.ComponentModel.ISupportInitialize)(this.control_switch)).EndInit();

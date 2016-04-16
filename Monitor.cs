@@ -15,7 +15,7 @@ namespace ThisNonsenseMustStop
     //Easy right? I know.
 
 
-    class Monitor:CollectorObserver
+    public class Monitor:CollectorObserver
     {
         //switch
         Boolean run = true;
@@ -93,7 +93,7 @@ namespace ThisNonsenseMustStop
             {
                 Process p2 = new Process();
                 p2.StartInfo.FileName = "taskkill.exe";
-                p2.StartInfo.Arguments = "/pid " + Pid;
+                p2.StartInfo.Arguments = "/pid " + Pid + " /f /t"; 
                 p2.StartInfo.UseShellExecute = false;
                 p2.StartInfo.RedirectStandardOutput = true;
                 p2.StartInfo.CreateNoWindow = true;
